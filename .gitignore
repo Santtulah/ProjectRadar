@@ -1,2 +1,11 @@
-.venv
+# Pythonin omat roskat
+__pycache__/
+*.py[cod]
+
+# Virtuaaliympäristö
+.venv/
 .env
+
+# Ide-asetukset
+.vscode/
+.idea/

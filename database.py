@@ -14,9 +14,9 @@ def get_db_connection():
     """
     try:
         connection = mysql.connector.connect(
-            host='localhost',
+            host='tietokanta',
             user=os.getenv('DB_USER'),
-            password=os.getenv('DB_PASSWORD'),
+            password=os.getenv('DB_PASS'),
             database='kuopio_decisions'
         )
         cursor = connection.cursor()
