@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  tietokanta:
+    image: mysql:8.0
+    container_name: kuopio_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: kuopio_decisions
+      MYSQL_USER: koodari
+      MYSQL_PASSWORD: salasana123
+      MYSQL_ROOT_PASSWORD: root_salasana
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
