@@ -7,9 +7,9 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: kuopio_decisions
-      MYSQL_USER: koodari
-      MYSQL_PASSWORD: salasana123
-      MYSQL_ROOT_PASSWORD: root_salasana
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
     ports:
       - "3306:3306"
     volumes:

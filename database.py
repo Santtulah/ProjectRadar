@@ -1,5 +1,10 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 import mysql.connector
 from mysql.connector import Error
+
 
 
 def get_db_connection():
@@ -10,8 +15,8 @@ def get_db_connection():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            user='koodari',
-            password='salasana123',
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
             database='kuopio_decisions'
         )
         cursor = connection.cursor()
