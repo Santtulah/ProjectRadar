@@ -25,6 +25,16 @@ services:
       - tietokanta
     env_file:
       - .env
+  
+  worker:
+    build: .
+    container_name: kuopio_worker
+    restart: always
+    depends_on:
+      - tietokanta
+    env_file:
+      - .env
+    command: ["python", "scheduler.py"]
 
 volumes:
   mysql_data:

@@ -169,18 +169,18 @@ def is_relevant_decision(title: str, description: str) -> bool:
 
     return bool(COMPILED_PATTERN.search(title_and_description))
 
-
-if __name__ == "__main__":
-    import sys
-    sys.stdout.reconfigure(encoding="utf-8")
-
+def run_etl():
+    """Tämä on pääfunktio, joka hakee ja tallentaa päätökset tietokantaan."""
+    print("Aloitetaan Kuopion päätösten haku...")
     rss_data = fetch_rss_data()
 
     if rss_data:
         parsed_data = parse_item_metadata(rss_data)
-
         for item in parsed_data:
             save_agenda(item)
+    print("ETL-ajo suoritettu onnistuneesti!")
+
+    
 
 
 
