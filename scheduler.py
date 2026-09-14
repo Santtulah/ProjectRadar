@@ -11,5 +11,5 @@ while True:
     except Exception as e:
         print(f"Virhe ETL-prosessissa: {e}")
 
-    print(f"Worker menee nukkumaan. Seuraava herätys {AJOVALI} sekunnin kuluttua.")
-    time.sleep(AJOVALI)
+    print(f"Worker menee nukkumaan. Seuraava herätys {RUN_INTERVAL} sekunnin kuluttua.")
+    time.sleep(RUN_INTERVAL)
