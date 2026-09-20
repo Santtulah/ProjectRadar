@@ -36,5 +36,13 @@ services:
       - .env
     command: ["python", "scheduler.py"]
 
+  dashboard:
+    container_name: kuopio_dashboard
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
 volumes:
   mysql_data:
